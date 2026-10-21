@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Json;
+using Shared;
 
 var http = new HttpClient();
 http.BaseAddress = new Uri("http://localhost:5265");
@@ -31,6 +32,3 @@ while (true)
 }
 
 Console.WriteLine("Goodbye!");
-
-record ChatInput(string Message);
-record ChatOutput(string Answer);

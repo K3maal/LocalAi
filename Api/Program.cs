@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using OllamaSharp;
 using OllamaSharp.Models.Chat;
+using Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,5 +54,3 @@ app.MapPost("/chat", async (ChatInput input, ChatDbContext db) =>
 
 app.Run();
 
-record ChatInput(string Message);
-record ChatOutput(string Answer);
