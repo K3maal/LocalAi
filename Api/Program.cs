@@ -21,6 +21,12 @@ ollama.SelectedModel = "llama3.2:1b";
 
 app.MapGet("/", () => "Hello from MyAi API!");
 
+app.MapGet("/models", async () =>
+{
+    var models = await ollama.ListLocalModelsAsync();
+    return models.Select(m => m.Name).ToList();
+});
+
 app.MapPost("/chats", async (ChatDbContext db) =>
 {
     var chat = new Chat {Title = "New chat", CreatedAt = DateTime.UtcNow};
@@ -86,7 +92,7 @@ app.MapPost("/chats/{chatId}/messages", async (int chatId, ChatInput input, Chat
 
     var request = new ChatRequest
     {
-        Model = ollama.SelectedModel,
+        Model = input.Model ?? ollama.SelectedModel,
         Messages = lastMessages
             .Select(m => new Message { Role = new ChatRole(m.Role), Content = m.Content })
             .ToList()
