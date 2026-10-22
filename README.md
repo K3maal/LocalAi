@@ -13,7 +13,7 @@ Most AI chat tools send everything you type to a company's servers. This project
 
 ## Features
 
-### Version 1 (current goal)
+### Version 1 (done)
 - Start a new chat from the terminal
 - The AI remembers earlier messages in the same chat
 - List, open, and continue old chats
@@ -59,7 +59,7 @@ The AI model has no memory of its own. That's why the API sends the recent chat 
 
 - **Language:** C# (.NET 10)
 - **Backend:** ASP.NET Core Web API
-- **Terminal app:** C# console app with Spectre.Console
+- **Terminal app:** C# console app
 - **Database:** SQLite with Entity Framework Core
 - **AI:** Ollama with OllamaSharp
 
@@ -71,10 +71,6 @@ The AI model has no memory of its own. That's why the API sends the recent chat 
 - [Ollama](https://ollama.com/)
 - Git
 - DB Browser for SQLite (optional, to look at the data)
-
-## Getting started
-
-> Coming soon – the project is still being designed.
 
 ## Project structure
 
